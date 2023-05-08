@@ -1,0 +1,57 @@
+<div class ="py-5 text-center">
+    <h2>Edit pet</h2>
+    <div class="col-md-12 order-md-1">
+        <form class="needs-validation" [formGroup] = "editForm" (submit)="updatePet()">
+            <div class="mb-3" >
+                <label for="name">Name</label>
+                <input class ="textfield"  type="text" placeholder = "Name" formControlName = "petName">
+            </div>
+
+            <div class="mb-3">
+                <label for="code">Code</label>
+                <input class ="textfield" placeholder = "Code" type="text" formControlName = "petCode">
+            </div>
+
+            <div class="mb-3">
+                <label for="types">Type</label>
+                <select class="custom-select d-block w-100" formControlName = "petType">
+                    <option value="">Choose...</option>
+                    <option value = "Cat">Cat</option>
+                    <option value = "Dog">Dog</option>
+                    <option value = "Horse">Horse</option>
+                    <option value = "Rabbit">Rabbit</option>
+                    <option value = "Parrot">Parrot</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="colors">Fur color</label>
+                <select class="custom-select d-block w-100" formControlName = "petFurColor">
+                    <option value="">Choose...</option>
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Brown</option>
+                    <option>Yellow</option>
+                    <option>Blue</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="countries">Country of origin</label>
+                <select class="custom-select d-block w-100" formControlName = "petCountry">
+                    <option value="">Choose...</option>
+                    <option>Estonia</option>
+                    <option>Latvia</option>
+                    <option>Lithuania</option>
+                    <option>Finland</option>
+                    <option>Sweden</option>
+                    <option>Norway</option>
+                </select>
+            </div>
+            <p class = "text-danger"> {{errorMessage}} </p>
+            <button class="btn btn-primary btn-lg btn-block" type = "submit">
+                Edit pet
+            </button>
+        </form>
+    </div>
+</div>

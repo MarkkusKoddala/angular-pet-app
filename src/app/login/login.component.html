@@ -1,0 +1,17 @@
+<div class = "container">
+  <form #loginForm = ngForm (ngSubmit) = login(loginForm)>
+
+    <div class = "login"> Login page</div>
+    
+    <h5 class = "text-danger"> {{userMessage}} </h5>
+    <div class="form-outline mb-4">
+      <input type="email" id="form2Example1" class="form-control" placeholder="username" ngModel name = "username"/>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input type="password" id="form2Example2" class="form-control" placeholder="password" ngModel name="password" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>Pets</h2>
+  </div>
+  <a [routerLink]="['/add']" class="btn btn-primary">Add pet</a>         
+  <table class="table">
+    <thead>
+      <tr style="cursor: default">
+        <th > ID</th>
+        <th (click) = "sort('petName', 'string')">Name
+          <i *ngIf="currentSort === 'desc'" class="bi bi-sort-up"></i>
+          <i *ngIf="currentSort === 'asc'" class="bi bi-sort-down"></i>
+          <i *ngIf="currentSort === 'default'" class="bi bi-sort"></i>
+        </th>     
+        <th (click) = "sort('petCode', 'integer')">Code</th>
+        <th (click) = "sort('petType', 'string')">Type</th>
+        <th (click) = "sort('petFurColor', 'string')">Fur color</th>
+        <th (click) = "sort('petCountry', 'string')">Country</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attribute of pets">
+        <td>{{attribute.petId}}</td>
+        <td>{{attribute.petName}}</td>
+        <td>{{attribute.petCode}}</td>
+        <td>{{attribute.petType}}</td>
+        <td>{{attribute.petFurColor}}</td>
+        <td>{{attribute.petCountry}}</td>
+        <td><a class="btn btn-primary" routerLink="/edit/{{attribute.petId}}" >Edit pet</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
